@@ -1,0 +1,9 @@
+Gemfile.lock
+log
+pkg
+travis.log
+.vagrant
+spec/fixtures/*
+junit
+.bundle/
+vendor/

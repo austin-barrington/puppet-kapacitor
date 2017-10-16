@@ -1,0 +1,36 @@
+{
+  "name": "puppet-kapacitor",
+  "version": "0.0.1",
+  "author": "Austin Barrington",
+  "summary": "Configuration and management of InfluxData's Kapacitor metrics monitoring",
+  "license": "GPL-3.0",
+  "source": "https://github.com/austin-barrington/puppet-kapacitor",
+  "project_page": "https://github.com/austin-barrington/puppet-kapacitor",
+  "issues_url": "https://github.com/austin-barrington/puppet-kapacitor/issues",
+  "tags": ["Kapacitor","influxdb","influxdata"],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "14.04" ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [ "8" ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [ "6", "7" ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [ "6", "7" ]
+    }
+  ],
+  "dependencies": [
+    { "name": "puppetlabs-stdlib", "version_requirement": ">=4.10.0 < 5.0.0" },
+    { "name": "puppetlabs-apt", "version_requirement": ">= 2.0.0 < 3.0.0" }
+  ],
+  "requirements": [
+    { "name": "puppet", "version_requirement": "> = 3.0.0 < 5.0.0" }
+  ]
+}

@@ -1,0 +1,30 @@
+# Kapacitor Configuration
+#
+# THIS FILE IS MANAGED BY PUPPET
+#
+hostname = "<%= @hostname %>"
+data_dir = "<%= @data_dir %>"
+
+# Do not apply configuration overrides during startup.
+# Useful if the configuration overrides cause Kapacitor to fail startup.
+# This option is intended as a safe guard and should not be needed in practice.
+skip-config-overrides = <%= @skip_config_overrides %>
+
+# Default retention-policy, if a write is made to Kapacitor and
+# it does not have a retention policy associated with it,
+# then the retention policy will be set to this value
+default-retention-policy = "<%= @default_retention_policy %>"
+
+<% if @config -%>
+<%   @config.each do | output, options | -%>
+<%= output %>
+<%      unless options == nil -%>
+<%          options.each do | option, value | -%>
+  <%= option -%> <% if value.is_a?(String) %>= <% if option == 'urls' %><%= value %><% else %>"<%= value %>"<% end %><% elsif value.is_a?(Array) %>= <%= value.inspect %><% elsif value.is_a?(Hash) %>
+  <% value.each do | option2, value2  | -%>
+    <%= option2 -%> = <%= value2 %>
+  <% end %> <% else %>= <%= value %><% end %>
+<%          end -%>
+<%      end -%>
+<%   end -%>
+<% end -%>

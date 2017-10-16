@@ -1,0 +1,2 @@
+---
+kapacitor::ensure: "1.3.0"
